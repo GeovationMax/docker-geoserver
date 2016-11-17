@@ -51,6 +51,9 @@ else
   cp $DIR/../$geoserver_version/conf/geoserver.xml build/conf
 fi
 
+cp $DIR/01_prepare-files.config build/.ebextensions
+cp $DIR/02_mount-efs.config build/.ebextensions
+
 cp $DIR/Dockerrun.aws.json build
 cp env.config build/.ebextensions
 sed "s/__block_device__/${blockdevice}/" ebs.config > build/.ebextensions/ebs.config
