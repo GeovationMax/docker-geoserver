@@ -34,6 +34,7 @@ fi
 
 cp $DIR/01_prepare-files.config build/.ebextensions
 cp $DIR/02_mount-efs.config build/.ebextensions
+cp $DIR/03_install-extensions.config build/.ebextensions
 
 cp $DIR/Dockerrun.aws.json build
 cp env.config build/.ebextensions
@@ -43,4 +44,3 @@ zip -r ../geoserver.zip * .ebextensions
 cd - > /dev/null
 
 rm -rf build
-
